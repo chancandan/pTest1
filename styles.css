@@ -19,40 +19,51 @@ header {
     text-align: center;
     background: #4CAF50;
     color: white;
+    font-size: 2em;
+}
+
+/* Content before and after the parallax section */
+.content {
+    padding: 100px;
+    background-color: #f4f4f4;
+    text-align: center;
 }
 
 /* Parallax Section */
 .parallax-container {
     position: relative;
-    height: 100vh;
+    height: 100vh; /* Full height of the viewport */
     background-image: url('https://source.unsplash.com/random/1920x1080?nature');
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .parallax-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     text-align: center;
     color: white;
     font-size: 2em;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
 }
 
-/* Regular Content Section */
-.regular-content {
-    padding: 50px;
-    background: #f4f4f4;
+/* Footer */
+footer {
+    background: #333;
+    color: white;
     text-align: center;
+    padding: 20px;
+    width: 100%;
 }
 
-/* Mobile Styles */
+/* Mobile styles to prevent performance issues on iOS */
 @media only screen and (max-width: 768px) {
     .parallax-container {
-        background-attachment: scroll; /* Mobile devices don't always support fixed background scrolling */
+        background-attachment: scroll; /* Fallback for mobile */
     }
 
     .parallax-content {
